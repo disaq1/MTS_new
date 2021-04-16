@@ -1,17 +1,43 @@
 ﻿.catalog-wrapper {
     text-align: center;
 
-    border: 1px solid red;
-    border-radius: 20px;
     margin: 50px 0;
+    padding: 0 10px;
 
+    height: 100%;
+
+    border: 1px solid $trueWhite;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 35px rgba(0,0,0,.5);
+}
+
+.wrapper-1 {
+    background: url(../img/bg-test.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper-2 {
+    background: url(../img/bg-test2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper-3 {
+    background: url(../img/bg-test1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper-4 {
+    background: url(../img/bg-test4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .catalog {
     display: grid;
     text-align: center;
 
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 1fr;
     grid-gap: 1vw;
 
@@ -26,6 +52,9 @@
 }
 
 .catalog__title {
+
+    padding: 20px 0;
+    color: $trueBlack;
     font-size: 28px;
 }
 
@@ -34,12 +63,11 @@
     flex-direction: column;
     justify-content: space-between;
 
-    border: 1px solid red;
     margin: 20px 0;
     padding: 10px;
     min-width: 300px;
     max-width: 767px;
-    background: rgba(255,255,255,.4);
+    background: rgba(255,255,255,.8);
     box-shadow: 0 15px 35px rgba(0,0,0,.5);
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,.25);
