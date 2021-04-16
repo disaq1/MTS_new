@@ -43,17 +43,36 @@
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: -1px;
+
     @include smooth;
+
+    @media screen and (min-width:400px) {
+        font-size: 2.5em;
+    }
+    @media screen and (min-width:500px) {
+        font-size: 2.8em;
+    }
+}
+
+.logo__span {
+    font-size: 0.5em;
+    text-transform: unset;
+
+    display: none;
+    @media screen and (min-width:600px) {
+        display: inline-block;
+    }
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateX(10px);
     color: red;
 }
 
 // Кнопка открытия бокового меню
 #toggle {
     position: relative;
+    right: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -105,6 +124,10 @@
 //Стили для кнопки открытия бокового меню
 .active {
     transform: translateX(-400px);
+}
+
+.active #toggle {
+    right: 0;
 }
 
 .active #toggle::before {
@@ -238,6 +261,13 @@
     display: flex;
     flex-direction: column;
     right: 100px;
+
+    padding: 10px;
+
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.25);
 }
 
 .main-support__item {
@@ -254,7 +284,7 @@
     color: $trueBlack;
     background: $trueWhite;
     text-decoration: none;
-    border: 1px solid $red;
+    border: 2px solid $red;
     border-radius: 5px;
     margin: 10px 0 0;
 
@@ -271,6 +301,8 @@
     color: $trueWhite;
     background: #666465;
     @include smooth;
+
+    margin-right: 0 !important;
 }
 
 .adress:focus,
