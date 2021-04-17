@@ -1,4 +1,7 @@
-﻿.catalog-wrapper {
+﻿//Стили для секции с карточками тарифов
+
+//Стили для оболочки секции с карточками тарифов
+.catalog-wrapper {
     text-align: center;
 
     margin: 50px 0;
@@ -11,7 +14,7 @@
 
     box-shadow: 0 5px 35px rgba(0,0,0,.5);
 }
-
+//Стили для каждой секции с карточками тарифов (настройка заднего фона)
 .wrapper-1 {
     background: url(../img/bg-test.png);
     background-size: cover;
@@ -32,32 +35,30 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+//Стили для оболочки карточек тарифов
 .catalog {
     display: grid;
     text-align: center;
 
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     grid-gap: 1vw;
 
     @media screen and (min-width:768px) {
-        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
     }
     @media screen and (min-width:1200px) {
-        grid-template-rows: 1fr;
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
+//Стили для заголовка секции с катрочками тарифов
 .catalog__title {
-
-    padding: 20px 0;
+    margin: 10px;
+    padding: 20px 0 0;
     color: $trueBlack;
     font-size: 28px;
 }
-
+//Стили для оболочки каждой отдельной карточки тарифа
 .catalog__item {
     display: flex;
     flex-direction: column;
@@ -81,21 +82,26 @@
         padding: 30px;
     }
 }
-
+//Стили для оболочки каждой отдельной карточки тарифа при наведении
 .catalog__item:hover {
     background: rgba(255,255,255,.9);
     box-shadow: 0 15px 35px rgba(0,0,0,.9);
 }
-
+//Стили для заголовка катрочки тариифа
 .catalog__item--heading {
     text-align: center;
     margin: 0 0 20px 0 !important;
 }
-
+//Стили для ссылки карточки тарифа
 .catalog__item--heading a {
     color: $trueBlack;
+    @include smooth;
 }
-
+//Стили для ссылки карточки тарифа при наведении
+.catalog__item--heading a:hover {
+    color: $red;
+}
+//Стили для оболочки описания преимущества тарифа (отдельная строка)
 .description--wrap {
     display: flex;
     align-items: center;
@@ -106,46 +112,47 @@
     background-color: rgba($color: $red, $alpha: 0);
     border-radius: 5px;
 }
-
+//Стили для текста описания тарифа (размер шрифта)
 .description--wrap p {
     font-size: 13px;
 }
-
+//Стили для наименования преимущества тарифа
 .description--name {
     float: left;
 }
-
+//Стили для значения преимущества тарифа
 .description--value {
     float: right;
 }
-
-.description--value img {
-    width: 25px;
-    height: 25px;
-}
-
+//Стили для оболочки ссылки "Подробнее о тарифе..."
 .description__more {
     text-align: center;
     margin: 10px 0;
 }
-
+//Стили для ссылки "Подробнее о тарифе..."
 .description__more--link {
     text-decoration: none;
     color: gray;
     font-size: 13.5px;
-}
 
+    @include smooth;
+}
+//Стили для ссылки "Подробнее о тарифе..." при наведении
+.description__more--link:hover {
+    color: $red;
+}
+//Стили для блока с ценой и кнопкой "Подключить" карточки тарифа
 .price {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
+//Стили для цены тарифа
 .price__cost {
     font-size: 25px;
     font-weight: 700;
 }
-
+//Стили для кнопки "Подключить"
 .price__btn {
     color: $trueWhite;
     background: $red;
@@ -157,7 +164,7 @@
 
     @include smooth;
 }
-
+//Стили для кнопки "Подключить" при наведении
 .price__btn:hover {
     background: red;
     cursor: pointer;
