@@ -40,14 +40,15 @@
     display: grid;
     text-align: center;
 
-    grid-template-rows: 1fr;
+    grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 1fr;
-    grid-gap: 1vw;
 
     @media screen and (min-width:768px) {
+        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
     }
     @media screen and (min-width:1200px) {
+        grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -60,18 +61,18 @@
 }
 //Стили для оболочки каждой отдельной карточки тарифа
 .catalog__item {
+    position: relative;
+    perspective: 1000px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    margin: 20px 0;
+    margin: 20px 5px;
     padding: 10px;
     min-width: 300px;
     max-width: 767px;
-    background: rgba(255,255,255,.8);
-    box-shadow: 0 15px 35px rgba(0,0,0,.5);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,.25);
+    min-height: 380px;
 
     @include smooth;
 
@@ -83,10 +84,41 @@
     }
 }
 //Стили для оболочки каждой отдельной карточки тарифа при наведении
-.catalog__item:hover {
+
+
+/////////////////////////////////////////////
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: .7s;
+    backface-visibility: hidden;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.25);
+}
+
+.back {
+    transform: rotateY(-180deg);
+}
+
+.final .front {
+    transform: rotateY(-180deg);
     background: rgba(255,255,255,.9);
     box-shadow: 0 15px 35px rgba(0,0,0,.9);
 }
+
+.final .back {
+    transform: rotateY(-360deg);
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+}
+/////////////////////////////////////////////
+
 //Стили для заголовка катрочки тариифа
 .catalog__item--heading {
     text-align: center;
@@ -108,7 +140,7 @@
     justify-content: space-between;
 
     margin: 5px 0;
-    padding: 10px;
+    padding: 5px;
     background-color: rgba($color: $red, $alpha: 0);
     border-radius: 5px;
 }
@@ -123,6 +155,11 @@
 //Стили для значения преимущества тарифа
 .description--value {
     float: right;
+}
+//Стили для значения преимущества тарифа
+.description--value img{
+    width: 20px;
+    height: 20px;
 }
 //Стили для оболочки ссылки "Подробнее о тарифе..."
 .description__more {
@@ -146,6 +183,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 0 5px;
 }
 //Стили для цены тарифа
 .price__cost {
