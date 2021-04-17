@@ -1,4 +1,4 @@
-﻿//Функция сплавной прокрутки до (Элемент)
+﻿//Функция плавной прокрутки до (Элемент)
 function scrollTo(element) {
     window.scroll({
         left: 0,
@@ -45,4 +45,13 @@ let TOTV = document.querySelector('#TOTV');
 TV.addEventListener('click', () => {
     toggle();
     scrollTo(TOTV);
+})
+
+//Переменные для нахождения пункта меню "ТВ" и секции "ТВ"
+let Form = document.querySelector('.Form');
+let Toform = document.querySelector('#Toform');
+//Функция прокрутки к секции "ТВ" по нажанию на соответствующую кнопку
+Form.addEventListener('click', () => {
+    toggle();
+    scrollTo(Toform);
 })
