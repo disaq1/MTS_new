@@ -1,0 +1,68 @@
+﻿//Стили для блока "Поддержка" на главной странице / список кнопок
+.main-support {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+
+    padding: 10px;
+
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.25);
+}
+//Стили для элемента блока "Поддержка" на главной странице / кнопка
+.main-support__item {
+    list-style: none;
+}
+//Стили для ссылки блока "Поддержка" на главной странице
+.main-support__link {
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    color: $trueBlack;
+    background: $trueWhite;
+    text-decoration: none;
+    border: 2px solid $red;
+    border-radius: 5px;
+    margin: 10px 0 0;
+
+    @include smooth;
+}
+//Стили для ссылки блока "Поддержка" на главной странице при наведении/фокусе
+.main-support__link:focus,
+.main-support__link:hover {
+    background: $red;
+    color: $trueWhite;
+}
+//Стили для ссылки кнопки ("Проверить адрес") блока "Поддержка" на главной странице
+.adress {
+    border: none;
+    color: $trueWhite;
+    background: #666465;
+    @include smooth;
+
+    margin-right: 0 !important;
+}
+//Стили для ссылки кнопки ("Проверить адрес") блока "Поддержка" на главной странице при наведении/фокусе
+.adress:focus,
+.adress:hover {
+    background: #0f1f38;
+}
+
+@media screen and (max-width:880px) {
+    .main-support {
+        position: absolute;
+        bottom: 50px;
+        right: initial;
+        flex-direction: row;
+    }
+    .main-support__link {
+        margin: initial;
+        margin-right: 10px;
+    }
+}

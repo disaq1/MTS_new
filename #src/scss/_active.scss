@@ -1,0 +1,22 @@
+﻿//Стили для кнопки открытия бокового меню
+.active {
+    transform: translateX(-400px);
+}
+
+.active #toggle {
+    right: 0;
+}
+
+.active #toggle::before {
+    border-radius: 2px;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(32deg);
+}
+
+.active #toggle::after {
+    border-radius: 2px;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-32deg);
+}

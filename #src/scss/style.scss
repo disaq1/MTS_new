@@ -3,5 +3,12 @@
 @import "fonts.scss";
 @import "scaffolding.scss";
 
-@import "_catalog.scss";
-@import "_index.scss";
+@import "form";
+@import "main-support";
+@import "main-content";
+@import "_#navigation";
+@import "_active";
+@import "_#toggle";
+@import "_header";
+@import "_catalog";
+@import "_index";

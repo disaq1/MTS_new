@@ -1,0 +1,63 @@
+﻿//Стили для приветственного блока на первой странице
+.main-content {
+    margin: 40px 0 -10px -40px;
+    padding: 10px;
+    min-width: 300px;
+    max-width: 600px;
+    background: rgba(255,255,255,.6);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    border-radius: 20px;
+    border: 4px solid rgba(255,255,255,.7);
+
+    @media screen and (min-width:500px) {
+        margin: 40px 0 -20px -40px;
+    }
+    @media screen and (min-width:768px) {
+        background: rgba(255,255,255,.4);
+        margin: 40px 0 20px -40px;
+    }
+}
+//Стили для заголовка приветственного блока ("ДОБРО ПОЖАЛОВАТЬ!")
+.main-content__title {
+    color: $trueBlack;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+//Стили для текста приветственного блока
+.main-content__subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: $trueBlack;
+    padding: 10px;
+}
+//Стили для кнопки приветственного блока ("Смотреть тарифы")
+.main-content__link {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    background: $red;
+    color: $trueWhite;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    border-radius: 5px;
+
+    @include smooth;
+}
+//Стили для кнопки приветственного блока ("Смотреть тарифы") при наведении/фокусе
+.main-content__link:focus,
+.main-content__link:hover {
+    background: red;
+    box-shadow: 0 -5px 25px rgba($color: $trueBlack, $alpha: 0.6);
+}
+//СТИЛИ ДЛЯ МОТИВАЦИОННОГО ТЕКСТА приветственного блока на первой странице
+.subtitle__span {
+    font-size: 20px;
+    font-weight: 900;
+    color: red;
+    @media screen and (min-width:500px) {
+        font-size: 25px;
+        letter-spacing: -1px;
+    }
+}

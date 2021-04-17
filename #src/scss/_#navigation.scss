@@ -1,0 +1,63 @@
+﻿//Стили для пунктов раздела Боковое меню (навигация сайта)
+
+// Оболочка блока "Навигация"
+#navigation {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: $blue;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+    @include smooth;
+}
+
+#navigation .active{
+    right: 0;
+}
+//Стили для списка ссылок меню "Навигация"
+.navigation__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+//Стили для элемента списка ссылок меню "Навигация"(оболочка ссылки)
+.navigation__list--item {
+    list-style: none;
+}
+//Стили для ссылки меню "Навигация"
+.navigation__list--link {
+    color: $trueWhite;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include smooth;
+}
+//Стили для ссылки меню "Навигация" при наведении/фокусе
+.navigation__list--link:focus,
+.navigation__list--link:hover {
+    color: rgba($color: $trueWhite, $alpha: 0.9);
+    background: $trueBlack;
+}
+
+//Стили для кнопки "Подключение" в меню "Навигация"
+.connection {
+    margin: 0 0 0 -5px !important;
+    padding: 5px;
+    border-radius: 10px;
+    background: $red;
+}
+//Стили для кнопки "Подключение" в меню "Навигация" при наведении/фокусе
+.connection:focus,
+.connection:hover {
+    transform: scale(1.02) translateX(2px);
+    @media screen and (min-width:768px) {
+        transform: scale(1.05) translateX(4px) translateY(-4px);
+        margin: 10px 0 0 -5px !important;
+    }
+}
