@@ -16,6 +16,7 @@
 }
 //Стили для каждой секции с карточками тарифов (настройка заднего фона)
 .wrapper-1 {
+    margin: 0 0 50px !important;
     background: url(../img/bg-test.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,15 +41,13 @@
     display: grid;
     text-align: center;
 
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 
     @media screen and (min-width:768px) {
-        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(2, 1fr);
     }
     @media screen and (min-width:1200px) {
-        grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -62,7 +61,7 @@
 //Стили для оболочки каждой отдельной карточки тарифа
 .catalog__item {
     position: relative;
-    perspective: 1000px;
+    perspective: 2000px;
 
     display: flex;
     flex-direction: column;
@@ -72,7 +71,7 @@
     padding: 10px;
     min-width: 300px;
     max-width: 767px;
-    min-height: 380px;
+    min-height: 400px;
 
     @include smooth;
 
@@ -83,8 +82,6 @@
         padding: 30px;
     }
 }
-//Стили для оболочки каждой отдельной карточки тарифа при наведении
-
 
 /////////////////////////////////////////////
 .front,
@@ -102,27 +99,112 @@
     border: 1px solid rgba(255,255,255,.25);
 }
 
+.front:hover,
+.back:hover {
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+}
+
 .back {
     transform: rotateY(-180deg);
 }
 
 .final .front {
     transform: rotateY(-180deg);
-    background: rgba(255,255,255,.9);
-    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+
 }
 
 .final .back {
     transform: rotateY(-360deg);
-    background: rgba(255,255,255,.9);
-    box-shadow: 0 15px 35px rgba(0,0,0,.9);
+
 }
 /////////////////////////////////////////////
 
+.description__list {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+.description__list--bar {
+    background: #353b48;
+    display: block;
+    height: 10px;
+    border: 1px solid rgba($color: $trueBlack, $alpha: 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #2187e7b3;
+}
+
+.description__list--bar span {
+    height: 10px;
+    float: left;
+    background: green;
+}
+
+.bar__mobile--1 {
+    background: orange !important;
+    width: 30%;
+}
+.bar__internet--1 {
+    background: yellow !important;
+    width: 50%;
+}
+.bar__tv--1 {
+    background: rgb(195, 205, 50) !important;
+    width: 55%;
+}
+
+.bar__mobile--2 {
+    background: rgb(0, 128, 43) !important;
+    width: 50%;
+}
+.bar__internet--2 {
+    background: yellow !important;
+    width: 50%;
+}
+.bar__tv--2 {
+    background: yellowgreen !important;
+    width: 70%;
+}
+
+.bar__mobile--3 {
+    background: rgb(79, 128, 0) !important;
+    width: 80%;
+}
+.bar__internet--3 {
+    background: yellowgreen !important;
+    width: 67%;
+}
+.bar__tv--3 {
+
+    width: 100%;
+}
+
+.bar__mobile--4 {
+    width: 100%;
+}
+.bar__internet--4 {
+    width: 100%;
+}
+.bar__tv--4 {
+    width: 100%;
+}
+
+.bar__mobile--5 {
+    background: yellowgreen !important;
+    width: 67%;
+}
+.bar__internet--5 {
+    background: orange !important;
+    width: 33%;
+}
+.bar__tv--5 {
+    width: 100%;
+}
 //Стили для заголовка катрочки тариифа
 .catalog__item--heading {
     text-align: center;
-    margin: 0 0 20px 0 !important;
+    margin: 10px 0 0 !important;
 }
 //Стили для ссылки карточки тарифа
 .catalog__item--heading a {
@@ -130,13 +212,22 @@
     @include smooth;
 }
 //Стили для ссылки карточки тарифа при наведении
+.catalog__item--heading a {
+    text-decoration: none;
+}
+//Стили для ссылки карточки тарифа при наведении
 .catalog__item--heading a:hover {
+    text-decoration: underline;
     color: $red;
+}
+
+.description {
+    padding: 10px;
 }
 //Стили для оболочки описания преимущества тарифа (отдельная строка)
 .description--wrap {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 
     margin: 5px 0;
@@ -154,6 +245,7 @@
 }
 //Стили для значения преимущества тарифа
 .description--value {
+    text-align: end;
     float: right;
 }
 //Стили для значения преимущества тарифа
@@ -168,33 +260,46 @@
 }
 //Стили для ссылки "Подробнее о тарифе..."
 .description__more--link {
-    text-decoration: none;
+    border: none;
     color: gray;
+    background: $trueWhite;
     font-size: 13.5px;
 
     @include smooth;
 }
 //Стили для ссылки "Подробнее о тарифе..." при наведении
 .description__more--link:hover {
+    cursor: pointer;
     color: $red;
 }
 //Стили для блока с ценой и кнопкой "Подключить" карточки тарифа
 .price {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 
-    padding: 0 5px;
+    padding: 0 10px;
 }
 //Стили для цены тарифа
 .price__cost {
     font-size: 25px;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+//Стили для старой цены тарифа
+.price__cost--old {
+    font-size: 20px;
+    font-weight: 500;
+    color: $red;
+    text-decoration: line-through;
 }
 //Стили для кнопки "Подключить"
 .price__btn {
     color: $trueWhite;
-    background: $red;
+    background: rgba($color: $red, $alpha: .8);
     width: 54%;
     min-height: 50px;
     border-radius: 10px;
