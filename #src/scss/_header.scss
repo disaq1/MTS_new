@@ -1,62 +1,388 @@
-﻿//Стили для шапки сайта
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
+﻿.header {
+    position: fixed;
     width: 100%;
+    margin: 0;
+    padding: 10px;
     display: flex;
-    justify-content: space-between;
-    padding: 40px 10px;
+    justify-content: center;
     z-index: 10000;
-    transition: 0.6s;
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: bg-animation 3s linear 1s alternate-reverse;
+
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: rgba($color: $trueBlack, $alpha: 0.4);
+    @media screen and (max-width: 798px){
+        display: none;
+    }
 }
-//Стили для задания ширины шапке сайта при активном классе ".active"
-.active .header {
-    width: 140%;
-    @media screen and (min-width:376px) {
-        width: 130%;
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
     }
-    @media screen and (min-width:500px) {
-        width: 125%;
+    100% {
+        background-position: right;
     }
-    @media screen and (min-width:600px) {
-        width: 120%;
+}
+
+.header__nav{
+    margin: 50px auto 0;
+    padding: 0 15px 5px;
+    max-width: 1200px;
+
+    @media screen and (max-width: 1230px){
+        margin: 5px auto 0;
+        max-width: 990px;
     }
-    @media screen and (min-width:767px) {
+
+    @media screen and (max-width: 1020px){
+        margin: 4px auto 0;
+        max-width: 768px;
+    }
+
+    @media screen and (max-width: 798px){
+        margin: 3px 0 0;
+        max-width: none;
         width: 100%;
     }
+    
 }
-//Стили для логотипа компании
-.logo {
+
+.nav{
     position: relative;
-    font-weight: 900;
-    color: $red;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+}
+
+.nav__burger-btn{
+    position: relative;
+    margin: 0 auto 0 0;
+    padding: 0;
+    display: none;
+    width: 24px;
+    height: 16px;
+    align-items: center;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        @include smooth;
+    
+        background-color: $trueBlack;
+        border-radius: 1px;
+    }
+    &::after{
+        bottom: 0;
+    }
+    &::before{
+        top: 0;
+    }
+
+    @media screen and (max-width: 798px){
+        display: block;
+    }
+}
+
+.nav__burger-lines{
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    width: 100%;
+    height: 1px;
+
+    background-color: $trueBlack;
+    border-radius: 1px;
+
+    @include smooth;
+}
+
+.nav__burger-btn--opened{
+    &::before{
+        top: 7.5px;
+        transform: rotate(45deg);
+    }
+    &::after{
+        bottom: 7.5px;
+        transform: rotate(-45deg);
+    }
+}
+
+.nav__burger-btn--opened .nav__burger-lines{
+    transform: scaleX(0);
+}
+
+.nav__site-nav{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    margin: 0 145px 0 0;
+    
+    @media screen and (max-width: 1020px){
+        margin-right: auto;
+    }
+}
+
+.site-nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
 
     @include smooth;
 
-    @media screen and (min-width:400px) {
-        font-size: 2.5em;
-    }
-    @media screen and (min-width:500px) {
-        font-size: 2.8em;
-    }
-}
-//Стили для продолжения логотипа компании ("официальный партнёр")
-.logo__span {
-    font-size: 0.5em;
-    text-transform: unset;
+    @media screen and (max-width: 798px){
+        position: absolute;
+        top: 100%;
+        left: 0;
 
-    display: none;
-    @media screen and (min-width:600px) {
-        display: inline-block;
+        padding: 10px 0 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        background-color: red;
+
+        transform: translateY(-5%);
+
+        z-index: -1;
+
+        display: none;
+
+        &--opened{
+            opacity: 1;
+            z-index: 999;
+            transform: translateY(0);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
     }
 }
-//Стили для логотипа компании при наведении
-.logo:hover {
-    transform: scale(1.1) translateX(10px);
-    color: red;
+
+.site-nav__item{
+    margin: 0 40px 0 0;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    @media screen and (max-width: 1020px){
+        margin: 0 20px 0 0;
+    }
+
+    @media screen and (max-width: 798px){
+        margin: 10px 0;
+    }
+}
+
+.site-nav__link{
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+
+    text-decoration: none;
+    color: $trueWhite;
+
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+        width: 0;
+        height: 2px;
+
+        background-color: $trueWhite;
+        border-radius: 1px;
+
+        @include smooth;
+    }
+    
+    &:hover,
+    &:focus {
+        @include smooth;
+        color: rgba($color: $trueWhite, $alpha: 0.9);
+        &::after{
+            width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: 1020px){
+        font-style: 14px;
+    }
+}
+
+.user-nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.user-nav__item{
+    margin: 0 15px 0 0;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.user-nav__link{
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 5px 0 30px;
+    padding: 15px 65px 15px 25px;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $trueWhite;
+
+    background-color: rgba($color: $trueBlack, $alpha: 0.3);
+    border-radius: 9px;
+    
+    @include smooth;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 160px;
+
+        display: block;
+        width: 23px;
+        height: 23px;
+
+        transform: rotate(-90deg);
+
+        animation: animPhone 3s infinite ease-in-out;
+
+        background-image: url("../img/phone.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 10px 0 $trueWhite;
+        background-color: rgba($color: $trueBlack, $alpha: 0.2);
+    }
+
+    @media screen and (min-width: 1230px){
+        margin: 0 30px;
+    }
+    @media screen and (max-width: 1020px){
+        padding: 7px 35px 7px 15px;
+        font-size: 14px;
+        line-height: 16px;
+
+        &::before{
+            top: 8px;
+            left: 115px;
+
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+.user-nav__btn{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+
+    font-style: normal;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: $trueWhite;
+    text-decoration: none;
+
+    background: none;
+    background-color: purple;
+    border: none;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    @include smooth;
+
+    &:hover,
+    &:focus{
+        box-shadow: 0 0 10px 0 $trueWhite;
+    }
+
+    @media screen and (max-width: 1020px){
+        padding: 9px;
+
+        font-size: 12px;
+        line-height: 12px;
+    }
+}
+
+@keyframes animPhone {
+    0% {
+        transform: rotate(-90deg);
+    }
+    10% {
+        transform: rotate(-90deg);
+    }
+    20% {
+        transform: rotate(-95deg);
+    }
+    22% {
+        transform: rotate(-85deg);
+    }
+    30% {
+        transform: rotate(-90deg);
+    }
+    32% {
+        transform: rotate(-80deg);
+    }
+    34% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+    }
 }
