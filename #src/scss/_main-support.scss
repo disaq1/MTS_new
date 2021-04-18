@@ -1,10 +1,9 @@
 ﻿//Стили для блока "Поддержка" на главной странице / список кнопок
 .main-support {
-    position: absolute;
     display: flex;
-    flex-direction: column;
-    right: 100px;
-
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
     padding: 10px;
 
     background: rgba(255,255,255,.8);
@@ -22,22 +21,33 @@
     display: grid;
     place-items: center;
     text-align: center;
-    width: 100px;
+    width: 150px;
     height: 50px;
     color: $trueBlack;
     background: $trueWhite;
     text-decoration: none;
     border: 2px solid $red;
     border-radius: 5px;
-    margin: 10px 0 0;
+    margin: 10px 10px 0;
 
     @include smooth;
 }
 //Стили для ссылки блока "Поддержка" на главной странице при наведении/фокусе
 .main-support__link:focus,
 .main-support__link:hover {
-    background: $red;
+    background: red;
     color: $trueWhite;
+}
+//Стили для ссылки кнопки ("Проверить адрес") блока "Поддержка" на главной странице
+.lk {
+    border: none;
+    color: $trueWhite;
+    background: rgba($color: $red, $alpha: .8);
+    @include smooth;
+}
+//Стили для ссылки кнопки ("войти в личный кабинет") блока "Поддержка" на главной странице при наведении
+.lk:hover {
+    background: red;
 }
 //Стили для ссылки кнопки ("Проверить адрес") блока "Поддержка" на главной странице
 .adress {
@@ -45,24 +55,9 @@
     color: $trueWhite;
     background: #666465;
     @include smooth;
-
-    margin-right: 0 !important;
 }
 //Стили для ссылки кнопки ("Проверить адрес") блока "Поддержка" на главной странице при наведении/фокусе
 .adress:focus,
 .adress:hover {
     background: #0f1f38;
-}
-
-@media screen and (max-width:880px) {
-    .main-support {
-        position: absolute;
-        bottom: 50px;
-        right: initial;
-        flex-direction: row;
-    }
-    .main-support__link {
-        margin: initial;
-        margin-right: 10px;
-    }
 }

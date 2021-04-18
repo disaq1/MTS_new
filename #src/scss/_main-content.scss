@@ -9,12 +9,11 @@
     border-radius: 20px;
     border: 4px solid rgba(255,255,255,.7);
 
+    @media screen and (min-width:398px) {
+        background: rgba(255,255,255,.9);
+    }
     @media screen and (min-width:500px) {
         margin: 40px 0 -20px -40px;
-    }
-    @media screen and (min-width:768px) {
-        background: rgba(255,255,255,.4);
-        margin: 40px 0 20px -40px;
     }
 }
 //Стили для заголовка приветственного блока ("ДОБРО ПОЖАЛОВАТЬ!")
@@ -29,21 +28,6 @@
     font-weight: 400;
     color: $trueBlack;
     padding: 10px;
-}
-//Стили для кнопки приветственного блока ("Смотреть тарифы")
-.main-content__link {
-    position: relative;
-    display: inline-block;
-    margin: 20px 0 0 0;
-    background: $red;
-    color: $trueWhite;
-    padding: 10px 30px;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 500;
-    border-radius: 5px;
-
-    @include smooth;
 }
 //Стили для кнопки приветственного блока ("Смотреть тарифы") при наведении/фокусе
 .main-content__link:focus,

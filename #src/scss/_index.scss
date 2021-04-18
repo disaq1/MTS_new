@@ -12,11 +12,11 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 10px 100px 200px;
-    background: url(../img/mts5g.webp);
-    background-size: contain;
+    padding: 100px 100px 200px;
+    background: url(../img/main-bg1.webp);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    
     display: flex;
     align-items: center;
 
@@ -25,16 +25,19 @@
     @include smooth;
 }
 
-@media screen and (max-width:767px) {
-    header {
-        padding: 20px 50px;
-    }
+@media screen and (max-width:798px) {
     .banner {
         padding: 100px 50px 150px;
         background: url(../img/MTS_bg.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100%;
         background-position: 50% 1%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    header {
+        padding: 20px 50px;
     }
     .main-content__title {
         font-size: 1.8em;
