@@ -1261,46 +1261,38 @@ input:focus {
 .description__list--bar span {
   height: 10px;
   float: left;
-  background: green;
+  background: #40c3ff;
 }
 
 .bar__mobile--1 {
-  background: orange !important;
   width: 30%;
 }
 
 .bar__internet--1 {
-  background: yellow !important;
   width: 50%;
 }
 
 .bar__tv--1 {
-  background: #c3cd32 !important;
   width: 55%;
 }
 
 .bar__mobile--2 {
-  background: #00802b !important;
   width: 50%;
 }
 
 .bar__internet--2 {
-  background: yellow !important;
   width: 50%;
 }
 
 .bar__tv--2 {
-  background: yellowgreen !important;
   width: 70%;
 }
 
 .bar__mobile--3 {
-  background: #4f8000 !important;
   width: 80%;
 }
 
 .bar__internet--3 {
-  background: yellowgreen !important;
   width: 67%;
 }
 
@@ -1321,12 +1313,10 @@ input:focus {
 }
 
 .bar__mobile--5 {
-  background: yellowgreen !important;
   width: 67%;
 }
 
 .bar__internet--5 {
-  background: orange !important;
   width: 33%;
 }
 

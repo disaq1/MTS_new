@@ -138,41 +138,33 @@
 .description__list--bar span {
     height: 10px;
     float: left;
-    background: green;
+    background: $blue;
 }
 
 .bar__mobile--1 {
-    background: orange !important;
     width: 30%;
 }
 .bar__internet--1 {
-    background: yellow !important;
     width: 50%;
 }
 .bar__tv--1 {
-    background: rgb(195, 205, 50) !important;
     width: 55%;
 }
 
 .bar__mobile--2 {
-    background: rgb(0, 128, 43) !important;
     width: 50%;
 }
 .bar__internet--2 {
-    background: yellow !important;
     width: 50%;
 }
 .bar__tv--2 {
-    background: yellowgreen !important;
     width: 70%;
 }
 
 .bar__mobile--3 {
-    background: rgb(79, 128, 0) !important;
     width: 80%;
 }
 .bar__internet--3 {
-    background: yellowgreen !important;
     width: 67%;
 }
 .bar__tv--3 {
@@ -191,11 +183,9 @@
 }
 
 .bar__mobile--5 {
-    background: yellowgreen !important;
     width: 67%;
 }
 .bar__internet--5 {
-    background: orange !important;
     width: 33%;
 }
 .bar__tv--5 {
