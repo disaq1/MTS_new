@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>MTS-NEW</title>
@@ -2023,29 +2024,14 @@
                     Адрес подключения:
                 </h3>
                 <div class="form-container__contactForm--box">
-                    <div class="inputBox w50">
-                        <input class="inputBox__input" type="text" required>
-                        <span class="inputBox__span">
-                            Область
+                    <div class="inputBox w75">
+                        <input id="address" name="address" type="text">
+                        <span class="inputBox__span inputBox__span--address">
+                            Область, Город, Улица, Дом
                         </span>
-                    </div>
-                    <div class="inputBox w50">
-                        <input class="inputBox__input" type="text" required>
-                        <span class="inputBox__span">
-                            Город
-                        </span>
-                    </div>
-                    <div class="inputBox w50">
-                        <input class="inputBox__input" type="text" required>
-                        <span class="inputBox__span">
-                            Улица
-                        </span>
-                    </div>
-                    <div class="inputBox w50">
-                        <input class="inputBox__input" type="text" required>
-                        <span class="inputBox__span">
-                            Дом, Подъезд, Этаж, Квартира
-                        </span>
+                        <p>
+                            <a id="show-map" href="#" target="_blank" style="display: none;">Показать на карте</a>
+                        </p>
                     </div>
                     <div class="inputBox w100">
                         <textarea class="inputBox__textarea" required></textarea>
@@ -2061,6 +2047,10 @@
         </div>
     </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
+
+<script src="js/input.min.js"></script>
 <script src="js/turnOver.js"></script>
 <script src="js/scroll.js"></script>
 <script src="js/toggle.js"></script>
